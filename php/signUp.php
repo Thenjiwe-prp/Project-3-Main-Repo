@@ -1,5 +1,49 @@
 <?php
 
+require "db.php";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+    $name = $_POST["name"];
+    $surname = $_POST["surname"];
+
+    if (isset($email) && isset($password)) {
+        echo "email:" . $email;
+        echo "<br></br>";
+        echo "password:" . $password;
+        echo "<br></br>";
+        echo "success values!";
+        echo "<br></br>";
+
+        $sql = "INSERT INTO customer(email, password , name ,surname) VALUES(?,?,?,?)";
+
+        $stmt = $conn->prepare($sql);
+
+        $stmt->bind_param("ssss", $email, $password, $name, $surname);
+
+        if ($stmt->execute()) {
+
+            echo "record inserted successfully";
+            header("Location: ../pages/signIn.html");
+            exit();
+
+        } else {
+            echo $stmt->error;
+        }
+
+    } else {
+        echo "isset error, signUp submit gave no values";
+    }
+
+
+}
+
+
+
+
+
 /* 
  CREATE TABLE customer (
     email VARCHAR(191) PRIMARY KEY,
@@ -11,51 +55,6 @@
 INSERT INTO customer (email, password, name, surname) 
         VALUES ('$email', '$password', '$name', '$surname');
 */
-
-$serverName = "localhost";  
-$username = "root";        
-$password = "";             
-$dbName = "Ecommerce";  
-
-$conn = new mysqli($serverName, $username, $password, $dbName);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-echo "Connected to " . $dbName . " successfully";
-echo "<br></br>";
-
-$email = $_POST["email"];
-$password = $_POST["password"];
-$name = $_POST["name"];
-$surname = $_POST["surname"];
-
-if (isset($email) && isset($password)) {
-    echo "email:" . $email;
-    echo "<br></br>";
-    echo "password:" . $password;
-    echo "<br></br>";
-} else {
-    echo "isset error, signUp submit gave no values";
-}
-
-
-$sql = "INSERT INTO customer(email, password , name ,surname) VALUES(?,?,?,?)";
-
-$stmt = $conn->prepare($sql);
-
-$stmt->bind_param("ssss", $email, $password , $name , $surname);
-
-if($stmt->execute()){
-
-    echo "record inserted successfully";
-
-}else{
-    echo $stmt->error;
-}
-
-
 
 
 
