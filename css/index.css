@@ -1,3 +1,74 @@
+*{
+    font-family: 'Inter', sans-serif;
+}
+
 body{
-    background-color: rgb(202, 234, 255);
+    background-color: #ffffff;
+}
+
+.mb-lg-0{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.btn-sign-up{
+    color: #141414;
+    background: #ffffff;
+    border-radius: 25px;
+    width: 100px;
+    transition: ease-in-out 0.2s;
+}
+
+.btn-sign-up:hover{
+    color: #ffffff;
+    background: transparent;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+    color: white;
+    background: #141414;
+    padding: 50px;
+}
+
+.team-logo{
+    height: auto;
+    width: auto;
+}
+
+.team-logo img{
+    height: auto;
+    width: 10vw;
+}
+
+.footer-panel{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+}
+
+.footer-panel a{
+    color: #646464;
+    text-decoration: none;
+    transition:  ease-in-out 0.2s;
+}
+
+.footer-panel a:hover{
+    color: #ffffff;
+}
+
+.footer-panel label{
+    color: #646464;
+    transition:  ease-in-out 0.2s;
+}
+
+.footer-panel label:hover{
+    color: #ffffff;
 }
