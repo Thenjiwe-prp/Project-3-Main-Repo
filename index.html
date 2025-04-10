@@ -1,67 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/index.css">
     <script src="./js/shoppingCart.js" defer></script>
-    <title>Ecommerce</title>
-
+    <title>StyleForLess</title>
+    
 </head>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background: #141414;">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="resources/alphas-black.png" style="width: 7.5vw; aspect-ratio: 1/1;"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./pages/signUp.html">Shop</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./pages/signUp.html">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./pages/signIn.html">Donations</a>
-                </li>
-                <li class="nav-item">
-
-                    <a class="nav-link" href="./pages/signIn.html">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./pages/signIn.html">
-                        <i class="fas fa-shopping-cart"></i>
-                    </a>
-                </li>
-
-                  <a class="nav-link" href="./pages/signIn.html">SignIn</a>
-              </li>       
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="resources/alphas-black.png" style="width: 7.5vw; aspect-ratio: 1/1;"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
               <li class="nav-item">
-                <a class="nav-link" href="./pages/shoppingCartTesting.html">SC</a>
-            </li>             
+                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="./pages/signUp.html">Shop</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="./pages/signUp.html">About</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="./pages/signIn.html">Donations</a>
+              </li>
+              <li class="nav-item">
 
-            </ul>
-            <form class="d-flex">
-                <button class="btn-sign-up">Sign Up</button>
-            </form>
-        </div>
-    </div>
+                  <a class="nav-link" href="./pages/signIn.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="./pages/shoppingCart.php">
+                      <i class="fas fa-shopping-cart"></i>
+                  </a>
+              </li>
+                <a class="nav-link" href="./pages/signIn.html">SignIn</a>
+            </li>              
+          </ul>
+          <form class="d-flex">
+              <button class="btn-sign-up">Sign Up</button>
+          </form>
+      </div>
+  </div>
 </nav>
 
 
 <body>
 
     <main>
-
 
        
     </main>
@@ -75,28 +68,23 @@
         <div class="row">
           <div class="col">
             <img src="./resources/5026662.jpg" style="width:350px; height:320px" >
-            <h2>price:R22.56</h2>
-            <button type="button" class="btn btn-primary cartButton">shoppingCartPlaceholder</button>
+            <h2>price:R10.56</h2>
+            <button type="button" name="button" class="btn btn-primary cartButton" data-price="10.56" data-src="./resources/5026662.jpg" >shoppingCartPlaceholder</button>
           </div>
           <div class="col">
-            <img src="./resources/test.PNG" style="width:350px; height:320px" >
-            <h2>price:R22.56</h2>
-            <button type="button" class="btn btn-primary cartButton">shoppingCartPlaceholder</button>
+            <img src="./resources/marbling-8620587_640.png" style="width:350px; height:320px" >
+            <h2>price:R20.56</h2>
+            <button type="button" class="btn btn-primary cartButton" data-price="20" data-src="./resources/marbling-8620587_640.png" >shoppingCartPlaceholder</button>
           </div>
           <div class="col">
-            Column
+            <img src="./resources/art-7537962_1280.jpg" style="width:350px; height:320px" >
+            <h2>price:R30.56</h2>
+            <button type="button" class="btn btn-primary cartButton" data-price="30.56" data-src="./resources/art-7537962_1280.jpg"  >shoppingCartPlaceholder</button>
           </div>
         </div>
       </div>
 
-
-    </main>
-
-    <div>
-
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <footer>
+      <footer>
         <div class="team-logo"><img src="resources/alphas-black.png"></div>
         <div class="footer-panel">
             <h5>Connect With Us</h5>
@@ -114,6 +102,7 @@
             <label><i class="fas fa-map-marker-alt"></i> Hanover St, District Six, Cape Town, 7925</label>
         </div>
     </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
