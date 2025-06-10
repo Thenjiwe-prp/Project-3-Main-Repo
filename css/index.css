@@ -47,6 +47,10 @@ footer{
     height: auto;
     width: 10vw;
 }
+ footer{
+    position: relative;
+    bottom: 0;
+ }
 
 .footer-panel{
     display: flex;

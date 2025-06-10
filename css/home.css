@@ -1,0 +1,35 @@
+#carouselExampleIndicators.carousel.slide {
+    position: relative;
+    height: 92.5vh;
+}
+
+.carousel-item img {
+    justify-self: center;
+    max-height: 90vh;
+    max-width: 100% ;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(100%);
+}
+
+.carousel-indicators {
+    filter: invert(100%);
+}
+
+.directory-container{
+    display: flex;
+    flex-direction: column;
+    background: #F3F3F3;
+    width: 90vw;
+    height: auto;
+    padding: 5vw;
+    margin: 5vw;
+}
+
+.directory-container .categories{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
