@@ -18,6 +18,10 @@
     filter: invert(100%);
 }
 
+h1{
+    font-weight: bold;
+}
+
 .directory-container{
     display: flex;
     flex-direction: column;
@@ -28,8 +32,37 @@
     margin: 5vw;
 }
 
+ a{
+    color: #141414;
+    text-decoration: none;
+}
+
 .directory-container .categories{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.directory-container .category{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.directory-container .category h3{
+    font-weight: bold;
+}
+
+.directory-container img{
+    width: 20vw;
+    height: auto;
+}
+
+.black-btn{
+    color: #F3F3F3;
+    background: #141414;
+    width: 12vw;
+    height: 7.5vh;
+    border-radius: 100px;
 }
