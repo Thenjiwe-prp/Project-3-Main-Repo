@@ -25,6 +25,16 @@ body{
     background: transparent;
 }
 
+#cartCounter {
+    color: white;
+    font-size: 1.5rem; /* Adjust size as needed */
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+
+/*/*Footer/*/
+
 footer{
     display: flex;
     flex-direction: row;
@@ -47,10 +57,6 @@ footer{
     height: auto;
     width: 10vw;
 }
- footer{
-    position: relative;
-    bottom: 0;
- }
 
 .footer-panel{
     display: flex;

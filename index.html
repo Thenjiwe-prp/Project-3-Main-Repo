@@ -30,7 +30,7 @@
                   <a class="nav-link" href="./pages/signUp.html">About</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="./pages/signIn.html">Donations</a>
+                  <a class="nav-link" href="./pages/donation.html">Donations</a>
               </li>
               <li class="nav-item">
 
@@ -41,8 +41,16 @@
                       <i class="fas fa-shopping-cart"></i>
                   </a>
               </li>
+              <li>
                 <a class="nav-link" href="./pages/signIn.html">SignIn</a>
-            </li>              
+            </li> 
+            
+                <button id="logOutButton" onclick="logOut()">logOut</button>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./pages/shoppingCart.php">Checkout</a>
+                <span id="cartCounter">0</span>
+            </li>  
           </ul>
           <form class="d-flex">
               <button class="btn-sign-up">Sign Up</button>
@@ -53,16 +61,6 @@
 
 
 <body>
-
-    <main>
-
-       
-    </main>
-    
-    <div>
-        <h1 class="text-primary" class="fs-3">Hello, Bootstrap!</h1>
-
-    </div>
 
     <div class="container">
         <div class="row">

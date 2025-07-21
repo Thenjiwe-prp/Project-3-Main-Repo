@@ -46,3 +46,24 @@ cartButtons.forEach(button => {
         }
     });
 });
+
+
+let logOut=()=>{
+    //have to use fetch again, just send a get request with no data. u still get a response. its a way of calling php script without going to it
+    console.log("logging out")
+    let logOutButton = document.getElementById("logOutButton");
+    
+    if(logOutButton){
+        fetch("./php/logOut.php")
+        .then(res=>res.text())
+        .then(data=>{
+            if (data === "logged_out") {
+                        console.log("User logged out successfully.");
+                        // You can also handle UI changes here, e.g., hide the log out button or show a login link
+                    }
+        })
+    }
+
+
+  
+}

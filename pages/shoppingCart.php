@@ -38,36 +38,54 @@
 </nav>
 
 <?php 
+// TODO 1. need a way of checking for duplicates, so only prints one idk. or stop it happening on another page like index js idk
 session_start();
 
 require "../php/db.php";
 
-$email = $_SESSION["email"];
+if(isset($_SESSION["email"])){
 
- $sql = "SELECT price,src FROM cart WHERE email = ?";
- $stmt = $conn->prepare($sql);
- $stmt->bind_param("s", $email);
- $stmt->execute();
- $result = $stmt->get_result();
+    $email = $_SESSION["email"];
 
- if ($result->num_rows > 0) {
+    $sql = "SELECT price,src FROM cart WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
     
-    while ($row = $result->fetch_assoc()) {
+        while ($row = $result->fetch_assoc()) {
+            
+            $price = $row['price'];
+            $src = $row['src'];
+            
+            // concatenate . because now resources is one folder above
+            $src = "." . $src;
         
-        $price = $row['price'];
-        $src = $row['src'];
-        // concatenate . because now resources is one folder above
-        $src = "." . $src;
-    
-        echo "Price: " . $price . "<br>";
-        echo "Image Source: " . $src . "<br><br>";
+            // echo "Price: " . $price . "<br>";
+            // echo "Image Source: " . $src . "<br><br>";
+
+            echo "<div>";
+            echo "<img src='" . $src . "' style='width: 350px; height: 320px;' alt='Item Image'>";
+            echo "<p>Price: " . $price . "</p>";
+            echo "</div>";
+
+        }
+    } else {
+        
+        echo "your cart is empty";
     }
-} else {
-    
-    echo "No items found in your cart.";
+
+    $stmt->close();
+
+}else{
+    echo "not logged in";
 }
 
-$stmt->close();
+
+
+
 
 
 
@@ -75,7 +93,7 @@ $stmt->close();
 
 <body>
 
-    <ul>
+    <!-- <ul>
         <li><?php if(isset($price)){echo $price;} ?></li>
         <li></li>
     </ul>
@@ -88,7 +106,9 @@ $stmt->close();
             <button type="button" name="button" class="btn btn-primary cartButton" data-price="10.56" data-src="./resources/5026662.jpg" >shoppingCartPlaceholder</button>
           </div>
         </div>
-      </div>
+      </div> -->
+
+    
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

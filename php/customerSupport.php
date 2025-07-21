@@ -10,12 +10,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $date = date("Y-m-d");
 
     //get values from form
-    $message = $_POST[""];
-    $number = $_POST[""];
+    $message = $_POST["message"];
+    $number = $_POST["phone"];
     
     if(isset($message)){
 
-        $sql = "INSERT INTO customerSupport(email, message ,date) VALUES (?,?,?)";
+        $sql = "INSERT INTO supportTickets(email, message ,messageDate) VALUES (?,?,?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("sss", $email,$message,$date);
         
@@ -24,7 +24,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }else{
            echo $stmt->error;
         }
-
 
     }
 

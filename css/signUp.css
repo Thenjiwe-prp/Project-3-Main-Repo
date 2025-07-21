@@ -20,6 +20,7 @@ main{
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     border-radius: 20px;
     backdrop-filter: blur(10px);
+    margin-bottom: 350px;
  
 }
 
@@ -73,4 +74,54 @@ button{
     border-style: solid;
     color: black;
     margin-top: 30px;
+}
+
+/*/*Footer/*/
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+    color: white;
+    background: #141414;
+    padding: 50px;
+}
+
+.team-logo{
+    height: auto;
+    width: auto;
+}
+
+.team-logo img{
+    height: auto;
+    width: 10vw;
+}
+
+.footer-panel{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+}
+
+.footer-panel a{
+    color: #646464;
+    text-decoration: none;
+    transition:  ease-in-out 0.2s;
+}
+
+.footer-panel a:hover{
+    color: #ffffff;
+}
+
+.footer-panel label{
+    color: #646464;
+    transition:  ease-in-out 0.2s;
+}
+
+.footer-panel label:hover{
+    color: #ffffff;
 }
