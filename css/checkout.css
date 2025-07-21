@@ -1,0 +1,65 @@
+h1{
+    font-weight: bold;
+}
+
+h2{
+    font-weight: bold;
+}
+
+input{
+    width: 30vw;
+    height: 7.5vh;
+    border-radius: 100px;
+    margin: 1vh;
+    text-align: center;
+}
+
+.checkout-forms{
+    display: flex;
+    flex-direction: row;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    background: #F3F3F3;
+    width: 60vw;
+    min-height: 75vh;
+    padding: 5vw;
+    margin: 1vw;
+}
+
+ a{
+    color: #141414;
+    text-decoration: none;
+}
+
+.container .categories{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.container .category{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .category h3{
+    font-weight: bold;
+}
+
+.container img{
+    width: 20vw;
+    height: auto;
+}
+
+.black-btn{
+    color: #F3F3F3;
+    background: #141414;
+    width: 12vw;
+    height: 7.5vh;
+    border-radius: 100px;
+}
