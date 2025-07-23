@@ -2,8 +2,9 @@ let cartButtons = document.querySelectorAll(".cartButton"); // Use class, not ID
 let cartCounterElement = document.getElementById("cartCounter");
 let cartValue =  document.getElementById("cartCounter").innerText;
 
-cartValue = parseInt(cartValue);
 
+
+cartValue = parseInt(cartValue);
 
 cartButtons.forEach(button => {
     button.addEventListener("click", function(e) {
@@ -47,6 +48,37 @@ cartButtons.forEach(button => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const deleteButtons = document.querySelectorAll(".deleteButton");
+
+  deleteButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      console.log("Delete button clicked!");
+
+       fetch("../php/deleteItem.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                // body: JSON.stringify(data) replace with unique identifier of some kind
+            })
+            .then(response => {
+                if (!response.ok) {
+                    // If the response status code is not 2xx, throw an error
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json(); // Attempt to parse the JSON
+            })
+            .then(data => {
+                console.log("works test")
+                // console.log("Response from server:", data);
+            })
+            .catch(error => {
+                console.error("Error:", error); // Log the error to the console
+            });
+     
+    });
+  });
+});
+
 
 let logOut=()=>{
     //have to use fetch again, just send a get request with no data. u still get a response. its a way of calling php script without going to it
@@ -67,3 +99,4 @@ let logOut=()=>{
 
   
 }
+

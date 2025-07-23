@@ -3,38 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/index.css">
-    <script src="../js/shoppingCart.js" defer></script>
-    <title>Document</title>
+    <script src="../js/shoppingCart.js?v=123" defer></script>
+    <title>StyleForLess</title>
 
 </head>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./pages/signUp.html">SignUp</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./pages/signIn.html">SignIn</a>
-              </li>              
-            </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background: #141414;">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="../resources/alphas-black.png" style="width: 7.5vw; aspect-ratio: 1/1;"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="../pages/signUp.html">Shop</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="./pages/signUp.html">About</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="./pages/donation.html">Donations</a>
+              </li>
+              <li class="nav-item">
+
+                  <a class="nav-link" href="./pages/signIn.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="./pages/shoppingCart.php">
+                      <i class="fas fa-shopping-cart"></i>
+                  </a>
+              </li>
+              <li>
+                <a class="nav-link" href="./pages/signIn.html">SignIn</a>
+            </li> 
+            
+                <button id="logOutButton" onclick="logOut()">logOut</button>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./pages/shoppingCart.php">Checkout</a>
+                <span id="cartCounter">0</span>
+            </li>  
+          </ul>
+          <form class="d-flex">
+              <button class="btn-sign-up">Sign Up</button>
+          </form>
+      </div>
+  </div>
 </nav>
 
 <?php 
@@ -69,8 +91,10 @@ if(isset($_SESSION["email"])){
             echo "<div>";
             echo "<img src='" . $src . "' style='width: 350px; height: 320px;' alt='Item Image'>";
             echo "<p>Price: " . $price . "</p>";
+             // need to add unique identifier and pass it to button function. Then send data using fetch to delete that item particular button that goes with that item
+            echo "<button class='deleteButton'><i class='fas fa-times-circle'></i></button>";
             echo "</div>";
-
+           
         }
     } else {
         
