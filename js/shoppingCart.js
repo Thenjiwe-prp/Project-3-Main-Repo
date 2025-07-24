@@ -49,16 +49,27 @@ cartButtons.forEach(button => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+
   const deleteButtons = document.querySelectorAll(".deleteButton");
+  
 
   deleteButtons.forEach(button => {
     button.addEventListener("click", () => {
+
       console.log("Delete button clicked!");
 
+      let itemID = button.getAttribute("data-id");
+      
+
+        let data = {
+                ID: itemID
+                
+            }
+      
        fetch("../php/deleteItem.php", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                // body: JSON.stringify(data) replace with unique identifier of some kind
+                body: JSON.stringify(data) 
             })
             .then(response => {
                 if (!response.ok) {
@@ -68,8 +79,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 return response.json(); // Attempt to parse the JSON
             })
             .then(data => {
-                console.log("works test")
-                // console.log("Response from server:", data);
+                console.log("worked")
+                window.location.reload();
+
+                // console.log("Response from server:", data); this gets replaced instantly when page refreshes
             })
             .catch(error => {
                 console.error("Error:", error); // Log the error to the console

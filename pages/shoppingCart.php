@@ -69,7 +69,7 @@ if(isset($_SESSION["email"])){
 
     $email = $_SESSION["email"];
 
-    $sql = "SELECT price,src FROM cart WHERE email = ?";
+    $sql = "SELECT price,src,id FROM cart WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -79,6 +79,7 @@ if(isset($_SESSION["email"])){
     
         while ($row = $result->fetch_assoc()) {
             
+            $id = $row['id'];   
             $price = $row['price'];
             $src = $row['src'];
             
@@ -91,8 +92,8 @@ if(isset($_SESSION["email"])){
             echo "<div>";
             echo "<img src='" . $src . "' style='width: 350px; height: 320px;' alt='Item Image'>";
             echo "<p>Price: " . $price . "</p>";
-             // need to add unique identifier and pass it to button function. Then send data using fetch to delete that item particular button that goes with that item
-            echo "<button class='deleteButton'><i class='fas fa-times-circle'></i></button>";
+            echo "uid: " . $id;
+            echo "<button class='deleteButton' data-id='$id'><i class='fas fa-times-circle'></i></button>";
             echo "</div>";
            
         }
